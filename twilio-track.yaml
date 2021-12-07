@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: foo
-          image: twilio-go-foobar
+          image: twilio-track
           imagePullPolicy: Never
 ---
 apiVersion: v1
@@ -28,6 +28,6 @@ spec:
   selector:
     foo: web
   ports:
-    - port: 5000
-      targetPort: 5000
+    - port: 8080
+      targetPort: 8080
       nodePort: 30000

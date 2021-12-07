@@ -7,19 +7,19 @@ local-run: ## Runs go binary locally
 	go run .
 
 docker-build: ## Builds docker image
-	docker build -t twilio-go-foobar .
+	docker build -t twilio-track .
 
 docker-run: ## Runs docker image
-	docker run --name foobar -it --rm -p 30000:5000 twilio-go-foobar
+	docker run --name twilio-track -it --rm -p 30000:5000 twilio-track
 
 docker-stop: ## Stops docker image
-	docker stop foobar
+	docker stop twilio-track
 
 kube-deploy:  ## Applies kube manifest
-	kubectl apply -f foobar.yaml
+	kubectl apply -f twilio-track.yaml
 
 kube-stop:  ## Deletes kube manifest
-	kubectl delete -f foobar.yaml
+	kubectl delete -f twilio-track.yaml
 
 .PHONY: help
 

@@ -6,6 +6,6 @@ COPY . .
 RUN go get -d -v ./...
 RUN go install -v ./...
 
-EXPOSE 5000
+EXPOSE 8080
 
-CMD ["twilio-go-foobar"]
+CMD ["twilio-track"]
