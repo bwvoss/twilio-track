@@ -6,13 +6,13 @@ local-build:  ## Installs go deps
 local-run: ## Runs go binary locally
 	go run .
 
-docker-build: ## Builds docker image
+docker-build: ## Builds Docker image (tags latest)
 	docker build -t twilio-track .
 
-docker-run: ## Runs docker image
-	docker run --name twilio-track -it --rm -p 30000:5000 twilio-track
+docker-run: ## Runs Docker container with latest image
+	docker run -it --rm -p 8080:8080 twilio-track
 
-docker-stop: ## Stops docker image
+docker-stop: ## Stops Docker image
 	docker stop twilio-track
 
 kube-deploy:  ## Applies kube manifest
